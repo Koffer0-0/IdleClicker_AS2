@@ -53,20 +53,6 @@
             android:orientation="vertical"
             app:layout_constraintGuide_begin="@dimen/default_spacing" />
 
-        <ImageButton
-            android:id="@+id/enemy"
-            android:layout_width="@dimen/button_width"
-            android:layout_height="@dimen/button_height"
-            android:background="?android:selectableItemBackground"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/white_background"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:src="@drawable/enemy1_stay" />
-
         <ImageView
             android:id="@+id/mainChar"
             android:layout_width="@dimen/button_width"
@@ -137,6 +123,73 @@
             app:layout_constraintBottom_toTopOf="@+id/revenue_text"
             app:layout_constraintEnd_toStartOf="@+id/margin_end_guide"
             tools:text="12" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progress_det"
+            android:layout_width="217dp"
+            android:layout_height="122dp"
+            android:layout_marginStart="220dp"
+            android:layout_marginBottom="116dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/background_image"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/hitPoints"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="51dp"
+                        android:layout_height="19dp"
+                        android:layout_weight="1"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:minHeight="50dp"
+                        android:progress="100"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteX="258dp"
+                        tools:layout_editor_absoluteY="493dp" />
+
+                    <TextView
+                        android:id="@+id/health"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="100"
+                        android:textColor="#F44336"
+                        android:textColorHint="#7A8089"
+                        app:layout_constraintStart_toEndOf="@+id/hitPoints"
+                        tools:layout_editor_absoluteY="493dp" />
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/enemy"
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:background="?android:selectableItemBackground"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.711"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:src="@drawable/enemy1_stay" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
          

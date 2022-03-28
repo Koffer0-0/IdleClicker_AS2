@@ -959,6 +959,8 @@ id graph
 id graph_wrap
 id group_divider
 id groups
+id health
+id hitPoints
 id home
 id homeAsUp
 id honorRequest
@@ -1008,6 +1010,7 @@ id percent
 id position
 id postLayout
 id progress_circular
+id progress_det
 id progress_horizontal
 id radio
 id ratio

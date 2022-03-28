@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
@@ -31,6 +33,12 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final ImageButton enemy;
 
   @NonNull
+  public final TextView health;
+
+  @NonNull
+  public final ProgressBar hitPoints;
+
+  @NonNull
   public final ImageView mainChar;
 
   @NonNull
@@ -41,6 +49,9 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
 
   @NonNull
   public final Guideline marginStartGuide;
+
+  @NonNull
+  public final ConstraintLayout progressDet;
 
   @NonNull
   public final TextView revenueText;
@@ -56,17 +67,21 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView amountSoldText, ImageView backgroundImage, TextView dessertSoldText,
-      ImageButton enemy, ImageView mainChar, Guideline marginBottomGuide, Guideline marginEndGuide,
-      Guideline marginStartGuide, TextView revenueText, View whiteBackground) {
+      ImageButton enemy, TextView health, ProgressBar hitPoints, ImageView mainChar,
+      Guideline marginBottomGuide, Guideline marginEndGuide, Guideline marginStartGuide,
+      ConstraintLayout progressDet, TextView revenueText, View whiteBackground) {
     super(_bindingComponent, _root, _localFieldCount);
     this.amountSoldText = amountSoldText;
     this.backgroundImage = backgroundImage;
     this.dessertSoldText = dessertSoldText;
     this.enemy = enemy;
+    this.health = health;
+    this.hitPoints = hitPoints;
     this.mainChar = mainChar;
     this.marginBottomGuide = marginBottomGuide;
     this.marginEndGuide = marginEndGuide;
     this.marginStartGuide = marginStartGuide;
+    this.progressDet = progressDet;
     this.revenueText = revenueText;
     this.whiteBackground = whiteBackground;
   }

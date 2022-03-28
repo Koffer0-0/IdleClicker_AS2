@@ -33,6 +33,7 @@ import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    private var hitPoints:Int = 100
     private var revenue = 0
     private var enemyKilled = 0
 
@@ -51,10 +52,10 @@ class MainActivity : AppCompatActivity() {
     // Create a list of all desserts, in order of when they start being produced
     private val allEnemies = listOf(
         Enemies(R.drawable.enemy1_stay, 5, 0),
-        Enemies(R.drawable.stay2, 10, 20),
-        Enemies(R.drawable.enemy3, 15, 30),
-        Enemies(R.drawable.enemy4, 30, 40),
-        Enemies(R.drawable.enemy5, 50, 50)
+        Enemies(R.drawable.stay2, 10, 3),
+        Enemies(R.drawable.enemy3, 15, 5),
+        Enemies(R.drawable.enemy4, 30, 8),
+        Enemies(R.drawable.enemy5, 50, 10)
     )
 
     private var currentEnemy = allEnemies[0]
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         binding.revenue = revenue
         binding.amountSold = enemyKilled
 
+        showHitPoints()
         // Make sure the correct dessert is showing
         binding.enemy.setImageResource(currentEnemy.imageId)
     }
@@ -102,6 +104,11 @@ class MainActivity : AppCompatActivity() {
         mainChar.setImageResource(R.drawable.ms_stay)
     }
 
+    private fun showHitPoints() {
+        binding.hitPoints.progress = hitPoints
+        binding.health.text = "$hitPoints"
+    }
+
     private fun enemyHurt() {
         Handler().postDelayed({
             mainChar.setImageResource(R.drawable.attack1)
@@ -110,15 +117,19 @@ class MainActivity : AppCompatActivity() {
     private fun onEnemyClicked() {
 
         // Update the score
-        revenue += currentEnemy.points
-        enemyKilled++
+        hitPoints -= 10
 
-        binding.revenue = revenue
-        binding.amountSold = enemyKilled
+        showHitPoints()
 
+        if (hitPoints < 1) {
+            revenue += currentEnemy.points
+            enemyKilled++
+
+            binding.revenue = revenue
+            binding.amountSold = enemyKilled
+            showCurrentEnemy()
+        }
         // Show the next dessert
-        showCurrentEnemy()
-
         heroAnimate()
         heroStay()
     }
@@ -131,6 +142,8 @@ class MainActivity : AppCompatActivity() {
         for (enemy in allEnemies) {
             if (enemyKilled >= enemy.startProductionAmount) {
                 newEnemy = enemy
+                hitPoints = 100
+                showHitPoints()
             }
             // The list of desserts is sorted by startProductionAmount. As you sell more desserts,
             // you'll start producing more expensive desserts as determined by startProductionAmount
