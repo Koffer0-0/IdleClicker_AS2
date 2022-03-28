@@ -20,6 +20,7 @@ import android.content.ActivityNotFoundException
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
@@ -109,11 +110,12 @@ class MainActivity : AppCompatActivity() {
         binding.health.text = "$hitPoints"
     }
 
-    private fun enemyHurt() {
-        Handler().postDelayed({
-            mainChar.setImageResource(R.drawable.attack1)
-        }, 500)
-    }
+//    private fun enemyHurt() {
+//        Handler().postDelayed({
+//            mainChar.setImageResource(R.drawable.hu)
+//        }, 500)
+//    }
+
     private fun onEnemyClicked() {
 
         // Update the score
@@ -127,6 +129,7 @@ class MainActivity : AppCompatActivity() {
 
             binding.revenue = revenue
             binding.amountSold = enemyKilled
+            Log.i("tag","Enemy is destroyed!")
             showCurrentEnemy()
         }
         // Show the next dessert

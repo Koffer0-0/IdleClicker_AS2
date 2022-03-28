@@ -1,4 +1,4 @@
-#Mon Mar 28 21:48:56 ALMT 2022
+#Mon Mar 28 21:57:48 ALMT 2022
 base.0=C\:\\Users\\Batya\\Documents\\GitHub\\IdleClicker_AS2\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
