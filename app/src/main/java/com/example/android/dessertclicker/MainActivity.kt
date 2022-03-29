@@ -27,6 +27,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
@@ -223,9 +224,5 @@ class MainActivity : AppCompatActivity() {
         super.onRestart()
         Timber.i("onRestart Called")
     }
-
-}
-
-private fun ImageView.setImageDrawable(attack1: Int) {
 
 }
