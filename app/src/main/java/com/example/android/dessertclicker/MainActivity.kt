@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private var hitPoints:Int = 100
     private var revenue = 0
+    private var demage = 10
     private var enemyKilled = 0
 
     // Contains all the views
@@ -72,6 +73,10 @@ class MainActivity : AppCompatActivity() {
             onEnemyClicked()
         }
 
+        binding.power.setOnClickListener {
+            powerUp()
+        }
+
         // Set the TextViews to the right values
         binding.revenue = revenue
         binding.amountSold = enemyKilled
@@ -79,6 +84,10 @@ class MainActivity : AppCompatActivity() {
         showHitPoints()
         // Make sure the correct dessert is showing
         binding.enemy.setImageResource(currentEnemy.imageId)
+    }
+
+    private fun powerUp() {
+        demage = 30
     }
 
     private fun heroAnimate() {
@@ -119,7 +128,7 @@ class MainActivity : AppCompatActivity() {
     private fun onEnemyClicked() {
 
         // Update the score
-        hitPoints -= 10
+        hitPoints -= demage
 
         showHitPoints()
 

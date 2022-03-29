@@ -4,6 +4,7 @@ package com.example.android.dessertclicker.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -51,6 +52,9 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   public final Guideline marginStartGuide;
 
   @NonNull
+  public final Button power;
+
+  @NonNull
   public final ConstraintLayout progressDet;
 
   @NonNull
@@ -69,7 +73,7 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
       TextView amountSoldText, ImageView backgroundImage, TextView dessertSoldText,
       ImageButton enemy, TextView health, ProgressBar hitPoints, ImageView mainChar,
       Guideline marginBottomGuide, Guideline marginEndGuide, Guideline marginStartGuide,
-      ConstraintLayout progressDet, TextView revenueText, View whiteBackground) {
+      Button power, ConstraintLayout progressDet, TextView revenueText, View whiteBackground) {
     super(_bindingComponent, _root, _localFieldCount);
     this.amountSoldText = amountSoldText;
     this.backgroundImage = backgroundImage;
@@ -81,6 +85,7 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
     this.marginBottomGuide = marginBottomGuide;
     this.marginEndGuide = marginEndGuide;
     this.marginStartGuide = marginStartGuide;
+    this.power = power;
     this.progressDet = progressDet;
     this.revenueText = revenueText;
     this.whiteBackground = whiteBackground;

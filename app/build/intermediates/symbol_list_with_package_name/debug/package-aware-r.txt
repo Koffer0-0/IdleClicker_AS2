@@ -1009,6 +1009,7 @@ id pathRelative
 id percent
 id position
 id postLayout
+id power
 id progress_circular
 id progress_det
 id progress_horizontal

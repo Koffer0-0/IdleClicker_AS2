@@ -20,11 +20,12 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
         sViewsWithIds.put(R.id.margin_start_guide, 6);
         sViewsWithIds.put(R.id.mainChar, 7);
         sViewsWithIds.put(R.id.white_background, 8);
-        sViewsWithIds.put(R.id.dessert_sold_text, 9);
-        sViewsWithIds.put(R.id.progress_det, 10);
-        sViewsWithIds.put(R.id.hitPoints, 11);
-        sViewsWithIds.put(R.id.health, 12);
-        sViewsWithIds.put(R.id.enemy, 13);
+        sViewsWithIds.put(R.id.power, 9);
+        sViewsWithIds.put(R.id.dessert_sold_text, 10);
+        sViewsWithIds.put(R.id.progress_det, 11);
+        sViewsWithIds.put(R.id.hitPoints, 12);
+        sViewsWithIds.put(R.id.health, 13);
+        sViewsWithIds.put(R.id.enemy, 14);
     }
     // views
     @NonNull
@@ -35,21 +36,22 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.TextView) bindings[2]
             , (android.widget.ImageView) bindings[3]
-            , (android.widget.TextView) bindings[9]
-            , (android.widget.ImageButton) bindings[13]
-            , (android.widget.TextView) bindings[12]
-            , (android.widget.ProgressBar) bindings[11]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.ImageButton) bindings[14]
+            , (android.widget.TextView) bindings[13]
+            , (android.widget.ProgressBar) bindings[12]
             , (android.widget.ImageView) bindings[7]
             , (androidx.constraintlayout.widget.Guideline) bindings[5]
             , (androidx.constraintlayout.widget.Guideline) bindings[4]
             , (androidx.constraintlayout.widget.Guideline) bindings[6]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[10]
+            , (android.widget.Button) bindings[9]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[11]
             , (android.widget.TextView) bindings[1]
             , (android.view.View) bindings[8]
             );
